@@ -31,7 +31,7 @@ const Problem = ({ id, title, difficulty, examples }) => {
             className={buttonVariants({
               variant: "link",
             })}
-            to='problem/1'
+            to='/problem/1'
           >
             Participate
           </Link>

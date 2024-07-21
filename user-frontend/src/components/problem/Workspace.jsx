@@ -12,7 +12,6 @@ import TestCasesandResult from "./TestCasesandResult";
 // import TestCasesandResult from "./TestCasesandResult";
 
 const WorkSpace = ({ data }) => {
-
   return (
     <ResizablePanelGroup
       direction="horizontal"
@@ -29,11 +28,11 @@ const WorkSpace = ({ data }) => {
         <ResizablePanelGroup direction="vertical">
           <ResizablePanel defaultSize={50}>
             {/* Code Editor */}
-            {/* <CodeEditor
+            <CodeEditor
               // setUserCode={setUserCode}
               // userCode={userCode}
               starterCode={data?.defaultCode}
-            /> */}
+            />
           </ResizablePanel>
           <ResizableHandle withHandle className="w-[5px] bg-gray-600" />
           <ResizablePanel defaultSize={50}>
@@ -42,7 +41,6 @@ const WorkSpace = ({ data }) => {
           </ResizablePanel>
         </ResizablePanelGroup>
       </ResizablePanel>
-      <button>Submit</button>
       {/* <SubmitBox
         handleSubmit={handleSubmit}
         executionLoading={executionProcessing}

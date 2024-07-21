@@ -2,6 +2,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { outputAtom } from "../../atoms/problemAtom";
+import { Button } from "../ui/button";
 
 const TestCasesandResult = ({ problem }) => {
   const [, setLoading] = useState(true);
@@ -145,6 +146,7 @@ const TestCasesandResult = ({ problem }) => {
               {problem.testcases[activeTestCaseId].output.toString()}
             </div>
           </div>
+          <Button className='py-1 px-4 absolute bottom-2 right-4'>Submit</Button>
         </section>
       ) : (
         <div className="h-[90%] rounded-md border border-gray-700 bg-[rgb(30,30,30)] text-white">

@@ -1,10 +1,10 @@
-"use client";
-
 import { useState } from "react";
 import { SubSkeletonPage } from "../SubSkeletonPage";
 
 const ProblemDescription = ({ problem }) => {
   const [loading, setLoading] = useState(false);
+
+  const [selector, setSelector] = useState(0);
 
   return (
     <main className="relative h-full">
@@ -38,14 +38,14 @@ const ProblemDescription = ({ problem }) => {
                 <div className="flex space-x-4">
                   <div className="mr-2 flex-1 text-xl font-medium text-white">
                     {problem?.name}
-                    <span className="text-[0.5rem]"> {pid}</span>{" "}
+                    <span className="text-[0.5rem]"> {1}</span>{" "}
                   </div>
                 </div>
 
                 {/* Problem Statement(paragraphs) */}
                 <div className="text-[0.9rem] text-gray-300">
                   <div
-                    dangerouslySetInnerHTML={{ __html: problem.description }}
+                    dangerouslySetInnerHTML={{ __html: problem?.problemStatement }}
                   />
                 </div>
 
@@ -56,20 +56,20 @@ const ProblemDescription = ({ problem }) => {
                       <p className="font-medium text-white ">
                         Example {index + 1}:{""}
                       </p>
-                      {example.img && (
+                      {/* {example?.img && example.img && (
                         <img src={example.img} alt="" className="mt-3" />
-                      )}
+                      )} */}
                       <div className="example-card">
                         <pre>
                           <strong className="text-white">Input: </strong>{" "}
-                          {example.input.toString()}
+                          {example.input}
                           <br />
                           <strong>Output: </strong>
-                          {example.output.toString()} <br />
+                          {example.output} <br />
                           {example.explanation && (
                             <>
                               <strong>Explanation:</strong>{" "}
-                              {example.explanation}
+                              {example?.explanation}
                             </>
                           )}
                         </pre>

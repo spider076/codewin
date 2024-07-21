@@ -1,6 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-// import Nav from "@/components/problems/Nav";
+import Nav from "@/components/problems/Nav";
 import ProblemsContainer from "@/components/problems/ProblemsContainer";
 import Footer from "@/components/Footer";
 // import { useNavigate } from "react-router-dom";
@@ -9,10 +9,9 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 // import AddQuestionBox from "@/components/problems/AddQuestionBox";
 
 const Problems = () => {
-  
   return (
     <main className="dark relative min-h-screen w-full bg-gradient-to-br from-[#0f0f0f] to-background pb-4">
-      {/* <Nav /> */}
+      <Nav />
       <MaxWidthWrapper className="flex items-start justify-between gap-10 py-16 max-lg:flex-col">
         <ProblemsContainer />
         {/* <AddQuestionBox /> */}

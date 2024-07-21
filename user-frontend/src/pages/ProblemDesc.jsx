@@ -13,8 +13,7 @@ const ProblemDesc = () => {
     }, 2000);
   }, []);
 
-  const Problem =
-  {
+  const Problem = {
     id: "two-sum",
     title: "1. Two Sum",
     difficulty: 1000,
@@ -30,21 +29,43 @@ const ProblemDesc = () => {
     examples: [
       {
         id: 1,
-        inputText: "nums = [2,7,11,15], target = 9",
-        outputText: "[0,1]",
+        input: "nums = [2,7,11,15], target = 9",
+        output: "[0,1]",
         explanation: "Because nums[0] + nums[1] == 9, we return [0, 1].",
       },
       {
         id: 2,
-        inputText: "nums = [3,2,4], target = 6",
-        outputText: "[1,2]",
+        input: "nums = [3,2,4], target = 6",
+        output: "[1,2]",
         explanation: "Because nums[1] + nums[2] == 6, we return [1, 2].",
       },
       {
         id: 3,
-        inputText: " nums = [3,3], target = 6",
-        outputText: "[0,1]",
+        input: " nums = [3,3], target = 6",
+        output: "[0,1]",
       },
+    ],
+    testcases: [
+      {
+        id: 1,
+        input: "nums = [5,3,10,2], target = 8",
+        output: "[1,3]",
+        hidden: false
+      },
+      {
+        id: 2,
+        input: "nums = [1,2,3,4], target = 7",
+        output: "[2,3]",
+        explanation: "Because nums[2] + nums[3] == 7, we return [2, 3].",
+        hidden:true
+      },
+      {
+        id: 3,
+        input: "nums = [0,4,3,0], target = 0",
+        output: "[0,3]",
+        explanation: "Because nums[0] + nums[3] == 0, we return [0, 3].",
+        hidden:false
+      }
     ],
     constraints: `<li class='mt-2'>
   <code>2 ≤ nums.length ≤ 10</code>
@@ -61,6 +82,7 @@ const ProblemDesc = () => {
     defaultCode:"your code here !"
   };
 
+  console.log(Problem);
 
   if (loading) {
     return <SkeletonPage />;

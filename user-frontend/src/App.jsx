@@ -26,7 +26,7 @@ function App() {
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Landing />} />
-                 <Route path="problem/1" element={<ProblemDesc />} />
+                 <Route path="/problem/1" element={<ProblemDesc />} />
                 {/* <Route path="myquestion/:pid" element={<MyQuestionDesc />} /> */}
                 {/* <Route path="/myquestion" element={<MyQuestions />} /> */}
                 {/* <Route path="/addquestion" element={<AddQuestion />} /> */}

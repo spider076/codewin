@@ -3,51 +3,34 @@
 import { resultAtom } from "../../atoms/problemAtom";
 import { Editor } from "@monaco-editor/react";
 import { Code } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 
-const CodeEditor = ({ starterCode, setUserCode, userCode }) => {
+const CodeEditor = ({ starterCode }) => {
   const [result, setResult] = useRecoilState(resultAtom);
-  const { pid } = useParams();
+  const [userCode, setUserCode] = useState();
 
   const handleSubmit = () => {
     setResult(true);
   };
 
   useEffect(() => {
-    const code = localStorage.getItem(`code-${pid}`);
+    const code = localStorage.getItem(`code-${1}`);
     if (code) {
       setUserCode(code ? JSON.parse(code) : starterCode);
     } else {
       setUserCode(starterCode);
     }
-  }, [pid, starterCode]);
+  }, [starterCode]);
 
   // restrictionsss
   const editorRef = useRef(null);
   var restrictions = [];
 
-  // function handleEditorDidMount(editor, monaco) {
-  //   try {
-  //     editorRef.current = editor;
-  //     const constrainedInstance = constrainedEditor(monaco);
-  //     const model = editor.getModel();
-  //     constrainedInstance.initializeIn(editor);
-  //     restrictions.push({
-  //       // range : [startLine, startColumn, endLine, endColumn];
-  //       range: [0, 1, 1, 1],
-  //       allowMultiline: true,
-  //     });
-  //     constrainedInstance.addRestrictionsTo(model, restrictions);
-  //   } catch (error) {
-  //     console.error("Failed to initialize editor with constraints:", error);
-  //   }
-  // }
-
   const onChange = (value) => {
     setUserCode(value);
-    localStorage.setItem(`code-${pid}`, JSON.stringify(value));
+    localStorage.setItem(`code-${1}`, JSON.stringify(value));
   };
 
   if (!starterCode || starterCode.length <= 0) {
